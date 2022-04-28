@@ -43,7 +43,7 @@ public class CaculatorUI extends JFrame implements ActionListener {
 	private boolean dotCheck = false;// if it is false we can put dot otherwise
 	// not..
 
-	private String firstValue, Secondvalue; // here our all operation between
+	private String firstValue, secondValue; // here our all operation between
 	private CaculatorLogic calcLogic = new CaculatorLogic();
 	private JLabel lblCurrentOperation;
 	private JLabel lblOpration;
@@ -178,14 +178,14 @@ public class CaculatorUI extends JFrame implements ActionListener {
 
 		} else if (e.getActionCommand().endsWith("=")) {
 			/***
-			 * here we store the second value in the SecondValue String calling
+			 * here we store the second value in the secondValue String calling
 			 * the getText() method
 			 */
 			
 			if (txtDisplay.getText().equals(""))
 				return;
 			
-			Secondvalue = txtDisplay.getText();
+			secondValue = txtDisplay.getText();
 			lblOpration.setText("=");
 
 			/**
@@ -208,19 +208,19 @@ public class CaculatorUI extends JFrame implements ActionListener {
 			if (addition) {
 				txtDisplay.setText(String.valueOf((calcLogic.add(
 						calcLogic.stringToDouble(firstValue),
-						calcLogic.stringToDouble(Secondvalue)))));
+						calcLogic.stringToDouble(secondValue)))));
 			} else if (substraction) {
 				txtDisplay.setText(String.valueOf((calcLogic.substruct(
 						calcLogic.stringToDouble(firstValue),
-						calcLogic.stringToDouble(Secondvalue)))));
+						calcLogic.stringToDouble(secondValue)))));
 			} else if (divition) {
 				txtDisplay.setText(String.valueOf((calcLogic.divide(
 						calcLogic.stringToDouble(firstValue),
-						calcLogic.stringToDouble(Secondvalue)))));
+						calcLogic.stringToDouble(secondValue)))));
 			} else if (multiplication) {
 				txtDisplay.setText(String.valueOf((calcLogic.multiply(
 						calcLogic.stringToDouble(firstValue),
-						calcLogic.stringToDouble(Secondvalue)))));
+						calcLogic.stringToDouble(secondValue)))));
 			}
 		} else if (e.getActionCommand().endsWith("Clear")) {
 			// if clear button press, it clears the txtDisplays
