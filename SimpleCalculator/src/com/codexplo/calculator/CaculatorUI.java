@@ -181,6 +181,10 @@ public class CaculatorUI extends JFrame implements ActionListener {
 			 * here we store the second value in the SecondValue String calling
 			 * the getText() method
 			 */
+			
+			if (txtDisplay.getText().equals(""))
+				return;
+			
 			Secondvalue = txtDisplay.getText();
 			lblOpration.setText("=");
 
